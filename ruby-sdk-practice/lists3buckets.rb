@@ -11,8 +11,8 @@ s3 = Aws::S3::Client.new({
 	credentials: Aws::InstanceProfileCredentials.new
 })
 resp = s3.list_buckets
-
-byebug
-
-resp.buckets.map(&:name)
+print "=== List of S3 Buckets ===\n"
+resp.buckets.each do |bucket|
+    print "#{bucket.name}\n"
+end
 
