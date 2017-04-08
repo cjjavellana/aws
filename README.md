@@ -21,6 +21,7 @@ are configured.
 7. Copy the ACCESS key ID and click the show link to show the Secret key access
 
 8. Open you ~/.bashrc and create the following environment variables
+
    export AWS_ACCESS_KEY_ID=<ACCESS KEY ID from Step 7>
    export AWS_SECRET_ACCESS_KEY=<Secret Access Key from Step 7>
 
