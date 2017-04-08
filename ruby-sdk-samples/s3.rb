@@ -4,7 +4,7 @@ class S3
     @client = s3client
   end
 
-  def bucket_exists(bucket_name)
+  def bucket_exists?(bucket_name)
     begin
       @client.head_bucket({:bucket => bucket_name}).on_success { |resp| return true }
     rescue StandardError => error
