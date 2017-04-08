@@ -29,7 +29,8 @@ class S3
     puts "Uploading #{file_path} to #{bucket_name}"
 
     File.open(file_path, 'rb') do |file|
-      @client.put_object(bucket: bucket_name, key: 'object-key', body: file)
+      file_name = File.basename(file_path)
+      @client.put_object(bucket: bucket_name, key: file_name, body: file)
     end
   end
 end
