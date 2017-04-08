@@ -2,8 +2,7 @@ require 'aws-sdk'
 require 'byebug'
 
 s3 = Aws::S3::Client.new({
-	region: 'ap-southeast-1',
-	credentials: Aws::InstanceProfileCredentials.new
+	region: 'ap-southeast-1'
 })
 resp = s3.list_buckets
 print "=== List of S3 Buckets ===\n"

@@ -18,6 +18,3 @@ PLATFORMS
 DEPENDENCIES
   aws-sdk (~> 2)
   byebug (~> 5.0.0)
-
-BUNDLED WITH
-   1.10.6
