@@ -34,3 +34,30 @@ are configured.
    ```bash
    $ env | grep AWS
    ```
+
+### Troubleshooting
+
+If you run into issues such as:
+
+```bash
+christian-mbp15:ruby-sdk-samples cjavellana$ gem install bundle
+ERROR:  While executing gem ... (Gem::Exception)
+    Unable to require openssl, install OpenSSL and rebuild ruby (preferred) or use non-HTTPS sources
+```
+
+Execute the following
+```bash
+$ brew install openssl
+$ rvm reinstall 2.4.0 --with-openssl-dir=`brew --prefix openssl`
+```
+
+```bash
+$ gem install bundler
+ERROR:  Could not find a valid gem 'bundler' (>= 0) in any repository
+```
+
+```bash
+$ gem sources -r https://rubygems.org -a http://rubygems.org
+$ gem install bundler
+$ bundle install
+```
