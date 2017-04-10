@@ -1,5 +1,9 @@
 class SQS
 
+  CREATE_QUEUE_DEFAULT_ATTR = {
+    ReceiveMessageWaitTimeSeconds: "20"
+  }
+
   def initialize(sqsClient)
     @sqsClient = sqsClient
   end
@@ -15,4 +19,11 @@ class SQS
     result.length > 0
   end
 
+  def create_queue(queue_name, attributes = {})
+    opts = CREATE_QUEUE_DEFAULT_ATTR.merge(attributes)
+    @sqsClient.create_queue({
+      queue_name: queue_name,
+      attributes: opts
+      })
+  end
 end
