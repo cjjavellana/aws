@@ -56,7 +56,7 @@ class SQS
     queue.queue_url
   end
 
-  def send_string_message(queue_url, message_body)
+  def send_message(queue_url, message_body)
     @sqsClient.send_message({
       queue_url: queue_url,
       message_body: message_body,

@@ -34,7 +34,7 @@ t1 = Thread.new {
 sleep 5
 
 # Send the message, causing the listener thread to terminate
-sqsClient.send_string_message(queue_url, "This is the message body")
+sqsClient.send_message(queue_url, "This is the message body")
 
 # Wait for listener thread to finish before we complete too
 t1.join
